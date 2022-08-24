@@ -1,0 +1,66 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet', href='css/after.css')
+  link(href='https://fonts.googleapis.com/css?family=Noto Sans', rel='stylesheet')
+  link(href='https://fonts.googleapis.com/css2?family=IBM+Plex+Sans', rel='stylesheet')
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  link(rel='stylesheet', href='/script/aos.css')
+  title Podcast
+header
+  a(href='index.html')
+    img.logo(src='/assets/logo.png', alt='logo')
+  // <a href="#" class="logo"><img src="/assets/logo.png" alt="logo"> </a>
+  ul.nav_links
+    li
+      a.Home(href='/index.html')
+        strong Home
+    li
+      a.news(href='/news.html')
+        strong News
+    li
+      a.podcast(href='/podcast.html')
+        strong Podcast
+    // <li><a href="/market.html" class="market"><strong>Marketplace</strong></a></li>
+    li
+      .dropdown
+        a
+          strong  More
+          i.fa.fa-caret-down
+        .dropdown-content
+          a(href='/charity.html') Charity
+          a(href='/leaderboard.html') LeaderBoard
+    script(src='/js/activePage.js')
+    li
+      button.button
+        strong Login
+  img.menu-btn(src='assets/menu-btn.png', alt='menu button')
+script.
+  const menuBtn = document.querySelector('.menu-btn');
+  const navlinks = document.querySelector('.nav_links');
+  menuBtn.addEventListener('click', () => {
+    navlinks.classList.toggle('mobile_menu');
+  });
+.podcast
+  .text_header
+    h2
+      strong Quiz
+  .flex-box
+    .podcasts
+      img.name-pod(src='assets/blog-img/one.jpg', alt='')
+      .bruh
+        h3 Budgeting Radio
+        br
+        pre(style='font-size: 13px;').
+          \nLearn how to manage your expenses, savings and
+          investment.
+    .finish
+      h3
+        strong  You have listened to this podcast.  Click here to start the quiz
+    button.start-button(onclick='got()') Start
+    script.
+      function got() {
+        window.location.href = "quizz.html";
+      }
